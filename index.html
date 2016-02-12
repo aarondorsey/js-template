@@ -98,7 +98,7 @@
 		var imageParameters = new ImageParameters();
 		imageParameters.format = "png32";
 
-		var mapURL = "https://bluemarble.zapatainc.com/arcgis/rest/services/mcclellan_dem/MapServer";
+		var mapURL = "http://services.nationalmap.gov/arcgis/rest/services/SGE/StreamGages_Linked_to_NHDPlus_2_1/MapServer";
 		lyrMAP = new esri.layers.ArcGISDynamicMapServiceLayer(mapURL,{"imageParameters":imageParameters});
 		console.log("mapservice id: "+lyrMAP.id);
 
