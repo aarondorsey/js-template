@@ -98,14 +98,14 @@
 		var imageParameters = new ImageParameters();
 		imageParameters.format = "png32";
 
-		var mapURL = "http://services.nationalmap.gov/arcgis/rest/services/SGE/StreamGages_Linked_to_NHDPlus_2_1/MapServer";
+		var mapURL = "https://bluemarble.zapatainc.com/arcgis/rest/services/croft/MapServer";
 		lyrMAP = new esri.layers.ArcGISDynamicMapServiceLayer(mapURL,{"imageParameters":imageParameters});
 		console.log("mapservice id: "+lyrMAP.id);
 
 		parser.parse();
 
 		// orig
-		legendLayers.push({ layer: lyrMAP, title: 'Fort McClellan, AL' });
+		legendLayers.push({ layer: lyrMAP, title: 'MapService' });
 
 		 function buildLayerList() {
           var items = arrayUtils.map(lyrMAP.layerInfos, function(info, index) {
@@ -372,7 +372,7 @@
        style="width:100%;height:100%;margin:0;">
        
 	<div id="rightPane"
-       data-dojo-type="dijit/layout/ContentPane" style="width:280px; overflow:auto;"
+       data-dojo-type="dijit/layout/ContentPane" style="width:280px; overflow:auto; padding:0;"
        data-dojo-props="region:'right'">
 
     <div data-dojo-type="dijit/layout/AccordionContainer">
@@ -381,16 +381,16 @@
       </div>
 
       <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Layers'">
+	  <!-- <span style="padding:10px 0;">Click to toggle the visibility of the layers</span><br /> -->
 		<span id="layer_list"></span><br />
-        <span style="padding:10px 0;"> Click to toggle the visibility of the layers </span>
         <div id="toggle" style="padding: 2px 2px;"></div>
       </div>
 
-		<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'TOC'">
+		<!-- <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'TOC'">
 			<div id="tocDiv"></div>
 			<span style="padding:10px 0;"> [available v0.9] </span>
         <div id="toggle" style="padding: 2px 2px;"></div>
-      </div>
+      </div> -->
 
     </div>
 	</div>
